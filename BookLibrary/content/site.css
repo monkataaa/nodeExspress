@@ -1,0 +1,24 @@
+.menu ul {
+    list-style-type: none;
+    background-color: greenyellow;
+    margin: auto;
+    text-align: center;
+}
+
+.menu ul li {
+    text-align: center;
+    margin: auto;
+    display: inline-block;
+}
+
+.container {
+    text-align: center;
+}
+
+header, footer {
+    text-align: center;
+}
+
+.error {
+   color: red 
+}

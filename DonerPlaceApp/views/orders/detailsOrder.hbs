@@ -1,0 +1,72 @@
+
+<body>
+    <div class="container">
+     
+        <main>
+            <h1>Order details</h1>
+            <div class="catalog">
+                <div class="column">
+                    <img class="product-img"src={{orderFromDb.image}}>
+                </div>
+                <div class="column">
+                    <h2>Chicken doner, 21cm</h2>
+                    <h3>{{orderFromDb.orderDate}}</h3>
+                    {{#if orderFromDb.toppings}}
+                        {{#each orderFromDb.toppings}}
+                            {{this}} </br>
+                        {{/each}}
+                    {{else}}
+                        No Toppings for this Duner
+                    {{/if}}
+                 
+                </div>
+                <div class="status">
+                    {{!-- {{#if orderFromDb.status == 'Pending'}}
+                                BOOOOOM
+                        {{/if}} --}}
+                    <div class="status-block">
+                        <span class="progress-right"></span>
+                        <span class="checkpoint
+                        {{#if check.pending}}
+                                current
+                        {{/if}}
+                        "></span><br>
+                        Pending
+                    </div>
+                    <div class="status-block">
+                        <span class="progress-left"></span>
+                        <span class="progress-right"></span>
+                        <span class="checkpoint 
+                        {{#if check.inProgress}}
+                                current
+                        {{/if}}
+                        "></span><br>
+                        In progress
+                    </div>
+                    <div class="status-block">
+                        <span class="progress-left"></span>
+                        <span class="progress-right"></span>
+                        <span class="checkpoint 
+                        {{#if check.inTransit}}
+                                current
+                        {{/if}}
+                        "></span><br>
+                        In transit
+                    </div>
+                    <div class="status-block">
+                        <span class="progress-left"></span>
+                        <span class="checkpoint
+                        {{#if check.delivered}}
+                                current
+                        {{/if}}
+                        "></span><br>
+                        
+                        Delivered
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doner Place</title>
+    <link href="/css/site.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            {{#if errorMsg}}
+                <h3 style="color:red;">{{errorMsg}}</h3>
+            {{/if}}
+            {{#if successMsg}}
+                <h3 style="color:green;">{{successMsg}}</h3>
+            {{/if}}
+            <span class="logo">Doner  Place</span>
+           
+            <ul class="menu">
+				<li><a class="button" href="/">Home</a></li>
+             {{#if currentUser}}
+              <span class="greeting">Welcome, {{currentUser.firstName}} !  <br>
+                  <a class="button" href="/users/logout">Logout</a></span>
+
+              <li><a class="button" href="/orders/user/status/{{currentUser._id}}">Order Status</a></li>
+              {{ else}}
+              <li><a class="button" href="/users/login">Login</a></li>
+              <li><a class="button" href="/users/register">Register</a></li>
+              {{/if}}
+            </ul>
+        </header>
+   
+         {{{body}}}
+        <footer>Doner Place &copy; 2017</footer>
+    </div>
+</body>
+</html>
